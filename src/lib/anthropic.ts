@@ -13,7 +13,11 @@ export function getAnthropicClient(): Anthropic {
   return client;
 }
 
-export const ANALYSIS_MODEL = "analysis-sonnet-4-6";
+const configuredAnalysisModel = process.env.ANALYSIS_MODEL;
+if (!configuredAnalysisModel) {
+  throw new Error("ANALYSIS_MODEL is not configured");
+}
+export const ANALYSIS_MODEL = configuredAnalysisModel;
 
 export function extractText(
   response: Awaited<ReturnType<Anthropic["messages"]["create"]>>,

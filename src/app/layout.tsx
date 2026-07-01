@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   keywords: [
     "portfolio analysis",
     "AI",
-    "analysis",
     "investing",
     "concentration risk",
     "sector exposure",
